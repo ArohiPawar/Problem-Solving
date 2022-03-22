@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>replit</title>
+<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+</head>
+<body>
+Question6
+</br>
+</br>
+</br>
+</br>
+<script>
+
+function sum(a, size)
+{
+var val1 = Math.pow(2, 53)
+var value = -val1 - 1
+var valu2 = 0
+
+for (var i = 0; i < size; i++)
+{
+valu2 = valu2 + a[i]
+if (value < valu2)
+value = valu2
+
+if (valu2 < 0)
+valu2 = 0
+}
+return value
+} 
+
+var a = [4,-1,2,1]
+document.write("Maximum contiguous sum is ",
+sum(a, a.length))
+
+</script>
+</body>
+</html>
