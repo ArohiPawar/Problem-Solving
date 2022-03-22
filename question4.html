@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>profit</title>
+</head>
+<body>
+<script>
+
+	
+function maxprofit(money, p1, check, buy, set) {
+
+
+
+if (p1 >= money.length || check <= 0)
+return 0;
+
+
+
+if (set[p1][buy] != -1)
+return set[p1][buy];
+
+
+
+let nbuy;
+if (buy == 1)
+nbuy = 0;
+else
+nbuy = 1;
+if (buy == 1) {
+return set[p1][buy] = Math.max(-money[p1] +
+maxprofit(money, p1 + 1, check, nbuy, set),
+maxprofit(money, p1 + 1, check, buy, set));
+}
+
+
+
+else {
+
+
+
+if (buy == 1)
+nbuy = 0;
+else
+nbuy = 1;
+return set[p1][buy] = Math.max(money[p1] +
+maxprofit(money, p1 + 1, check - 1, nbuy, set),
+maxprofit(money, p1 + 1, check, buy, set));
+}
+}
+
+
+
+function maxProfit(money) {
+let n = money.length;
+let set = new Array(n).fill(0).map(() => new Array(2).fill(-1))
+return maxprofit(money, 0, 1, 1, set);
+}
+let money = [7,6, 4,3,1];
+let ans = maxProfit(money);
+
+
+
+document.write(ans);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
